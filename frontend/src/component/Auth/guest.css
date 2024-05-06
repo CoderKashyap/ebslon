@@ -1,0 +1,17 @@
+.leye {
+    position: absolute;
+    margin-left: 370px;
+    margin-top: -29px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  @media only screen and (max-width: 1027px) {
+    .leye {
+      position: absolute;
+      right: 20px;
+      margin-top: -30px;
+      cursor: pointer;
+      z-index: 10;
+    }
+  }

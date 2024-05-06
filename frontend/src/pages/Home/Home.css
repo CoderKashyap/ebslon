@@ -1,0 +1,362 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+.theme_color_orange {
+  color: #fe5f1e;
+}
+
+.theme_color_background {
+  background-color: #fe5d1e;
+}
+
+.slick-prev {
+  border: 2px solid black;
+}
+
+.cartIcon:hover {
+  animation: shake 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(12deg);
+  }
+
+  50% {
+    transform: rotate(-12deg);
+  }
+
+  75% {
+    transform: rotate(12deg);
+  }
+
+  100% {
+    transform: rotate(-12deg);
+  }
+}
+
+.abcd {
+  position: fixed;
+  width: 350px;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  top: 100px;
+}
+
+.geo {
+  position: relative;
+  padding: 8px;
+  width: 100%;
+  max-width: 640px;
+  background-color: #ffffff;
+}
+
+.borderHover {
+  transition: 0.75s all;
+}
+
+
+
+.GDvg {
+  color: rgb(153, 153, 153);
+  text-decoration: line-through;
+}
+
+.eJcLXJ {
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+}
+
+.hoTNVy {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: #6366f1;
+}
+
+.cdxXEt {
+  position: relative;
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+.dDYKOE {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.emhZHg {
+  width: 90px;
+  height: 36px;
+  border: 0.5px solid #6366f1;
+  border-radius: 8px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.emhZHg:hover {
+  background-color: #f1f0f7;
+  transition: 0.75s all;
+}
+
+.iKlIZr {
+  -webkit-box-pack: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.boNTXX {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 300;
+  line-height: 18px;
+  /* height: 38px; */
+  font-size: 14px;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.lfVNDu {
+  color: rgb(117, 117, 117);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 12px;
+}
+
+.borderHover:hover {
+  border-color: #928aea;
+}
+
+.react-multi-carousel-item {
+  /* max-width: 260px !important; */
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.react-multi-carousel-track {
+  margin-bottom: 20px;
+}
+
+.banner-carousel .react-multi-carousel-track {
+  margin-bottom: 0;
+}
+
+.react-multiple-carousel__arrow {
+  background-color: white !important;
+  z-index: 5 !important;
+  border: 2px solid rgba(128, 128, 128, 0.504) !important;
+  box-shadow: 0 0 8px rgba(128, 128, 128, 0.563);
+}
+
+.react-multiple-carousel__arrow:hover {
+  background-color: whitesmoke !important;
+}
+
+.react-multiple-carousel__arrow::before {
+  color: black !important;
+}
+
+.react-multiple-carousel__arrow--right {
+  right: -10px !important;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: -10px !important;
+}
+
+.react-multi-carousel-list {
+  position: static !important;
+}
+
+#hero-item {
+  background-color: rgba(255, 255, 255, 0.425);
+}
+
+.dis-div {
+  clip-path: polygon(0% 0%, 100% 0, 80% 50%, 100% 100%, 0% 100%);
+  /* transform: rotate(90deg); */
+}
+
+
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  border-radius: 1.5rem !important;
+}
+
+
+.homeHeading {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 1.4vmax;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.5);
+  width: 20vmax;
+  padding: 1vmax;
+  margin: 5vmax auto;
+  color: var(--black);
+}
+
+.carousel-container {
+  display: flex;
+  margin: 2vmax auto;
+  width: 90vw;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  max-width: 100%;
+}
+
+.banner-carousel {
+  display: flex;
+  /* margin: 1vmax auto; */
+  width: 90vw;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.productCard {
+  width: 14vmax;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: rgb(48, 48, 48);
+  margin: 2vmax;
+  transition: all 0.5s;
+  padding-bottom: 0.5vmax;
+}
+
+.productCard>img {
+  width: 14vmax;
+}
+
+.productCard>div {
+  margin: 0.5vmax;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.productCardSpan {
+  margin: 0.5vmax;
+  font: 300 0.7vmax "Roboto";
+}
+
+.productCard>p {
+  font-family: "Roboto";
+  font-size: 1.2vmax;
+  margin: 1vmax 0.5vmax;
+  margin-bottom: 0;
+}
+
+.productCard>span {
+  margin: 0.5vmax;
+  color: tomato;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1vmax;
+}
+
+.productCard:hover {
+  box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+
+  transform: translateY(-1vmax);
+}
+
+@media screen and (max-width: 600px) {
+  .productCard>p {
+    font-size: 1.7vmax;
+  }
+
+  .productCard>div {
+    margin: 0vmax;
+    display: block;
+  }
+
+  .productCard>span {
+    font-size: 1.5vmax;
+  }
+
+  .productCard>div>span {
+    margin: 0 0.5vmax;
+    font: 300 1vmax "Roboto";
+  }
+}
+
+
+@media screen and (max-width:769px) {
+
+  #hero-item {
+    min-width: 140px;
+  }
+
+  .emhZHg {
+    width: 70px;
+    height: 30px;
+    border: 0.5px solid #6366f1;
+    border-radius: 8px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+}
+
+#order-btn {
+  background-color: #ff8200;
+  font-weight: 500;
+}
+
+
+@media screen and (max-width:426px) {
+  #heroSection>div {
+    height: 81vh;
+  }
+
+  #hero-item {
+    min-width: 140px;
+  }
+
+  .item>div {
+    width: 150px;
+    height: 250px;
+    justify-content: center;
+  }
+
+  .item>div>a {
+    width: 150px;
+    height: 250px;
+  }
+
+  .popoup-inner {
+    position: relative;
+    padding: 6px;
+    width: 100%;
+    max-width: 640px;
+  }
+}
