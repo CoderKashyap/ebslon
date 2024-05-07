@@ -89,7 +89,7 @@ const GuestLogin = () => {
             </div>
 
             <div className="text-sm">
-              <Link to="/guestRegister" className="font-medium">
+              <Link to="/register" className="font-medium">
                 Don't have account?
               </Link>
             </div>

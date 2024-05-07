@@ -62,7 +62,7 @@ export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_USER_REQUEST });
 
-    const { data } = await axios.get(`/api/me`);
+    const { data } = await axios.get(`/api/profile`);
     console.log(data);
     dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
   } catch (error) {
@@ -84,13 +84,18 @@ export const logout = () => async (dispatch) => {
 };
 
 // Update Profile
-export const updateProfile = (userData) => async (dispatch) => {
+export const uploadAvatar = (userData) => async (dispatch) => {
+  console.log(userData);
   try {
     dispatch({ type: UPDATE_PROFILE_REQUEST });
 
-    const config = { headers: { "Content-Type": "multipart/form-data" } };
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
 
-    const { data } = await axios.put(`/api/me/update`, userData, config);
+    const { data } = await axios.post(`/api/profile/photo`, userData, config);
 
     console.log(data);
 

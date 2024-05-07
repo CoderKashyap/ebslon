@@ -13,8 +13,6 @@ import Home from "./pages/Home/Home";
 function App() {
   const dispatch = useDispatch();
 
-  const { error, isAuthenticated, user } = useSelector((state) => state.user);
-
   useEffect(() => {
     dispatch(loadUser());
   }, []);
@@ -24,8 +22,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/guestRegister" element={<GuestRegister />} />
-        <Route path="/GuestLogin" element={<GuestLogin />} />
+        <Route path="/register" element={<GuestRegister />} />
+        <Route path="/login" element={<GuestLogin />} />
       </Routes>
     </>
   )

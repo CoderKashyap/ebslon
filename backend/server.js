@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const path = require('path');
 const http = require('http');
+const cloudinary = require("cloudinary");
 
 const server = http.createServer(app);
 
@@ -31,7 +32,7 @@ app.use(express.static(path.join(__dirname, "../frontend/dist")));
 app.use(errorMiddleware);
 
 
-const connectDatabase = require("./config/database"); 
+const connectDatabase = require("./config/database");
 
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {
@@ -44,9 +45,14 @@ process.on("uncaughtException", (err) => {
 // Connecting to database
 connectDatabase();
 
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 server.listen(process.env.PORT, () => {
-  console.log(`Server is working on http://localhost:${process.env.PORT}`); 
+  console.log(`Server is working on http://localhost:${process.env.PORT}`);
 });
 
 

@@ -5,11 +5,13 @@ import { thunk } from "redux-thunk"
 
 import {
   userReducer,
+  profileReducer
 } from "./reducers/userReducer";
 
 
 const reducer = combineReducers({
   user: userReducer,
+  userAvatarMsg: profileReducer,
 });
 
 

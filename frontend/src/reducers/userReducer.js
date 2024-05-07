@@ -14,25 +14,12 @@ import {
   LOGOUT_SUCCESS,
   REGISTER_USER_FAIL,
   REGISTER_USER_REQUEST,
-  REGISTER_USER_SUCCESS,
-  UPDATE_PASSWORD_FAIL,
-  UPDATE_PASSWORD_REQUEST,
-  UPDATE_PASSWORD_RESET,
-  UPDATE_PASSWORD_SUCCESS,
   UPDATE_PROFILE_FAIL,
   UPDATE_PROFILE_REQUEST,
-  UPDATE_PROFILE_RESET,
   UPDATE_PROFILE_SUCCESS,
-  UPDATE_USER_FAIL,
-  UPDATE_USER_REQUEST,
-  UPDATE_USER_RESET,
-  UPDATE_USER_SUCCESS,
-  USER_DETAILS_FAIL,
-  USER_DETAILS_REQUEST,
-  USER_DETAILS_SUCCESS,
 } from "../constants/userConstants";
 
-export const userReducer = (state = { user: { role: "user" }, isAuthenticated: undefined, status: undefined, loading: false }, action) => {
+export const userReducer = (state = { user: {}, isAuthenticated: undefined, loading: false }, action) => {
   switch (action.type) {
     case LOGIN_REQUEST:
     case REGISTER_USER_REQUEST:
@@ -41,21 +28,15 @@ export const userReducer = (state = { user: { role: "user" }, isAuthenticated: u
         ...state,
         loading: true,
         isAuthenticated: false,
-        status: "requested"
       };
-      case REGISTER_USER_SUCCESS:
-        return {
-          ...state,
-          otpSentMsg: action.payload.message,
-          user: action.payload.user,
-          status: "success"
-      };
+
     case LOGIN_SUCCESS:
       return {
         ...state,
         loading: false,
         isAuthenticated: true,
         user: action.payload,
+        message: "Successful login with a JSON Web Token",
       };
     case LOAD_USER_SUCCESS:
       return {
@@ -63,7 +44,6 @@ export const userReducer = (state = { user: { role: "user" }, isAuthenticated: u
         loading: false,
         isAuthenticated: true,
         user: action.payload,
-        status: "success"
       };
 
     case LOGOUT_SUCCESS:
@@ -78,7 +58,6 @@ export const userReducer = (state = { user: { role: "user" }, isAuthenticated: u
         ...state,
         loading: false,
         isAuthenticated: false,
-        // user: null,
         error: action.payload,
       };
 
@@ -87,8 +66,6 @@ export const userReducer = (state = { user: { role: "user" }, isAuthenticated: u
         ...state,
         loading: false,
         isAuthenticated: false,
-        // user: null,
-        status: "fail",
         error: action.payload,
       };
 
@@ -110,56 +87,26 @@ export const userReducer = (state = { user: { role: "user" }, isAuthenticated: u
   }
 };
 
-export const profileReducer = (state = { loading: false, isUpdated: false }, action) => {
+export const profileReducer = (state = { loading: false }, action) => {
   switch (action.type) {
     case UPDATE_PROFILE_REQUEST:
-    case UPDATE_PASSWORD_REQUEST:
-    case UPDATE_USER_REQUEST:
-    case DELETE_USER_REQUEST:
       return {
         ...state,
         loading: true,
       };
     case UPDATE_PROFILE_SUCCESS:
-    case UPDATE_PASSWORD_SUCCESS:
-    case UPDATE_USER_SUCCESS:
       return {
         ...state,
         loading: false,
-        isUpdated: action.payload,
         message: action.message
       };
 
-    case DELETE_USER_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        isDeleted: action.payload.success,
-        message: action.payload.message,
-      };
 
     case UPDATE_PROFILE_FAIL:
-    case UPDATE_PASSWORD_FAIL:
-    case UPDATE_USER_FAIL:
-    case DELETE_USER_FAIL:
       return {
         ...state,
         loading: false,
         error: action.payload,
-      };
-
-    case UPDATE_PROFILE_RESET:
-    case UPDATE_PASSWORD_RESET:
-    case UPDATE_USER_RESET:
-      return {
-        ...state,
-        isUpdated: false,
-      };
-
-    case DELETE_USER_RESET:
-      return {
-        ...state,
-        isDeleted: false,
       };
 
     case CLEAR_ERRORS:
